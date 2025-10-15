@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { trendingMovies } from "../Services/api";
 import TrendingMovies from "../categories/TrendingMovies";
+import LatestMovies from "../categories/Newreleases";
 
 
 function Movielist() {
@@ -17,6 +18,7 @@ function Movielist() {
     return (
         <div>
         <TrendingMovies/>
+        <LatestMovies/>
         </div>
     )
 }
