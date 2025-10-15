@@ -1,5 +1,5 @@
+import Footer from "../components/Footer";
 import Hero from "../components/Hero";
-import Movielist from "../components/Movielist";
 import Navbar from "../components/Navbar";
 
 function Homepage() {
@@ -7,6 +7,7 @@ function Homepage() {
         <div className="bg-stone-200">
         <Navbar/>
         <Hero/>
+        <Footer/>
         </div>
     )
 }
