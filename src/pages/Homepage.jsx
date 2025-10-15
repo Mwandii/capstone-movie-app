@@ -9,7 +9,7 @@ function Homepage() {
         <div className="bg-stone-200">
         <Navbar/>
         <Hero/>
-        <MovieCard/>
+        <Movielist/>
         <Footer/>
         </div>
     )
