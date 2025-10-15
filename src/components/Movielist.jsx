@@ -3,6 +3,7 @@ import { trendingMovies } from "../Services/api";
 import TrendingMovies from "../categories/TrendingMovies";
 import LatestMovies from "../categories/Newreleases";
 import PopularTvshows from "../categories/PopularTvshows";
+import ComingSoon from "../categories/Comingsoon";
 
 
 function Movielist() {
@@ -21,6 +22,7 @@ function Movielist() {
         <TrendingMovies/>
         <LatestMovies/>
         <PopularTvshows/>
+        <ComingSoon/>
         </div>
     )
 }
