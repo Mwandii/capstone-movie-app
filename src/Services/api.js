@@ -18,3 +18,9 @@ export const popularTvshows = async () => {
     if (!res.ok) throw new Error("Failed to fetch latest tv-shows")
         return res.json();
 }
+
+export const comingSoon = async () => {
+    const res = await fetch(`${BASE_URL}/movie/upcoming?api_key=${API_KEY}`)
+    if (!res.ok) throw new Error("Failed to fetch coming soon movies")
+        return res.json();
+}
