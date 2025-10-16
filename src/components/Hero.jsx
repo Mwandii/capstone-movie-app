@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Hero({ data, isLoading, isError }) {
 
@@ -27,7 +28,7 @@ function Hero({ data, isLoading, isError }) {
         <button onClick={prev} className="absolute top-30 left-5 text-white text-2xl bg-white/40 hover:bg-black/60 px-3 py-3 hover:cursor-pointer rounded-full">
           <FaChevronLeft />
         </button>
-        <h3>{current.title}</h3>
+        <Link to={`/moviedetails/${current.id}`}><h3 className="text-xl hover:cursor-pointer">{current.title}</h3></Link>
         <p>{current.vote_average ? current.vote_average.toFixed(1) : "No rating yet"}</p>
         <p>
           {current.overview}
