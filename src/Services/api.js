@@ -24,3 +24,11 @@ export const comingSoon = async () => {
     if (!res.ok) throw new Error("Failed to fetch coming soon movies")
         return res.json();
 }
+
+export const fetchMovieDetails = async ({ queryKey }) => {
+  const [, id] = queryKey;
+  const res = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
+  );
+  return res.json();
+};
