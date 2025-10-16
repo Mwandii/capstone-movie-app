@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { comingSoon } from "../Services/api";
+import { Link } from "react-router-dom";
 
 function ComingSoon() {
 
@@ -25,7 +26,9 @@ function ComingSoon() {
                   <p className="m-1">{movies.release_date?.slice(0, 4)}</p>
                   <p className="m-1">{movies.media_type}</p>
                 </div>
+                <Link to={`/moviedetails/${movies.id}`}>
                 <button className="bg-black text-white text-sm p-2 rounded-md hover:bg-gray-700 hover:cursor-pointer bottom-2">Watch Now</button>
+                </Link>
               </div>
             </div>
 ))}
