@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import Movielist from "../components/Movielist";
 import Navbar from "../components/Navbar";
 import { trendingMovies } from "../Services/api";
+import MovieDetails from "./MovieDetails";
 
 function Homepage() {
 
@@ -14,10 +15,12 @@ function Homepage() {
 
     return (
         <div className="bg-stone-200">
+            <MovieDetails/>
+        {/*
         <Navbar/>
         <Hero data={data} isLoading={isLoading} isError={isError} />
         <Movielist/>
-        <Footer/>
+        <Footer/> */}
         </div>
     )
 }
