@@ -32,3 +32,9 @@ export const fetchMovieDetails = async ({ queryKey }) => {
   );
   return res.json();
 };
+
+export const fetchMovieGenres = async () => {
+  const res = await fetch(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`)
+  if (!res.ok) throw new Error("Failed to fetch movie genres")
+    return res.json();
+}
