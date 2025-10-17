@@ -28,7 +28,7 @@ export const comingSoon = async () => {
 export const fetchMovieDetails = async ({ queryKey }) => {
   const [, id] = queryKey;
   const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
+    `${BASE_URL}/movie/${id}?api_key=${API_KEY}`
   );
   return res.json();
 };
@@ -36,5 +36,12 @@ export const fetchMovieDetails = async ({ queryKey }) => {
 export const fetchMovieGenres = async () => {
   const res = await fetch(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`)
   if (!res.ok) throw new Error("Failed to fetch movie genres")
+    return res.json();
+}
+
+export const fetchGenreDetails = async ( {queryKey} ) => {
+  const [, id] = queryKey;
+  const res = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${id}&language=en-US&page=1`)
+  if (!res.ok) throw new Error("Failed to fetch the genre")
     return res.json();
 }
