@@ -41,7 +41,13 @@ export const fetchMovieGenres = async () => {
 
 export const fetchGenreDetails = async ( {queryKey} ) => {
   const [, id] = queryKey;
-  const res = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${id}&language=en-US&page=1`)
+  const res = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${id}&language=en-US&page=1&page=2`)
   if (!res.ok) throw new Error("Failed to fetch the genre")
+    return res.json();
+}
+
+export const fetchSearchResults = async ( query, page = 1 ) => {
+  const res = await fetch(`${BASE_URL}/search/multi?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}`)
+  if (!res.ok) throw new Error("Failed to fetch search results")
     return res.json();
 }
