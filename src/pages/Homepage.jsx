@@ -18,12 +18,10 @@ function Homepage() {
 
     return (
         <div className="bg-stone-200">
-            <SearchResults/>
-            {/*
         <Navbar/>
         <Hero data={data} isLoading={isLoading} isError={isError} />
         <Movielist/>
-        <Footer/> */}
+        <Footer/> 
         </div>
     )
 }
