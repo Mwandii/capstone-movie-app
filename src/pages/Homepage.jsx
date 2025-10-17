@@ -16,11 +16,10 @@ function Homepage() {
 
     return (
         <div className="bg-stone-200">
-            <GenrePage/>
-       {/* <Navbar/>
+       <Navbar/>
         <Hero data={data} isLoading={isLoading} isError={isError} />
         <Movielist/>
-        <Footer/> */}
+        <Footer/>
         </div>
     )
 }
