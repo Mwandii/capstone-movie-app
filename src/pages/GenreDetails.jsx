@@ -19,7 +19,7 @@ function GenreDetails() {
     return (
          <div className="bg-stone-200">
             <Navbar/>
-        <h2 className="text-xl font-semibold p-3">Movies By Genre</h2>
+        <h2 className="text-xl font-semibold p-3 m-2">Movies By Genre</h2>
         <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 p-6">
           {data.results.map((movies) => (
             <div className="bg-white shadow-md rounded-lg flex flex-col h-full" key={movies.id}>
