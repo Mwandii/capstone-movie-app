@@ -7,6 +7,7 @@ import { trendingMovies } from "../Services/api";
 import MovieDetails from "./MovieDetails";
 import GenrePage from "./GenrePage";
 import SearchBar from "../components/SearchBar";
+import SearchResults from "./SearchResults";
 
 function Homepage() {
 
@@ -17,10 +18,12 @@ function Homepage() {
 
     return (
         <div className="bg-stone-200">
+            <SearchResults/>
+            {/*
         <Navbar/>
         <Hero data={data} isLoading={isLoading} isError={isError} />
         <Movielist/>
-        <Footer/>
+        <Footer/> */}
         </div>
     )
 }
