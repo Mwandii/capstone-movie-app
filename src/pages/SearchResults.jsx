@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { fetchSearchResults } from "../Services/api";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Loading from "../components/Loading";
 
 function SearchResults() {
 
@@ -15,7 +16,7 @@ function SearchResults() {
         enabled: !!query,
     })
 
-    if (isLoading) return <p>Loading...</p>
+    if (isLoading) return <p><Loading/></p>
     if (isError) return <p>Error: {error.message}</p>
 
     return (

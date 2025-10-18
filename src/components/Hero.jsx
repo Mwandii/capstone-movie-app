@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Loading from "./Loading";
 
 function Hero({ data, isLoading, isError }) {
 
-  if (isLoading) return <p>Loading...</p>
+  if (isLoading) return <p><Loading/></p>
   if (isError) return <p>Could not fetch trending movies</p>
 
   const movies = data?.results?.slice(0, 6) || [];

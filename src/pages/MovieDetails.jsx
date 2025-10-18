@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { fetchMovieDetails } from "../Services/api";
+import Loading from "../components/Loading";
 
 function MovieDetails() {
 
@@ -14,7 +15,7 @@ function MovieDetails() {
         queryFn: fetchMovieDetails
     })
 
-     if (isLoading) return <p>Loading...</p>;
+     if (isLoading) return <p><Loading/></p>;
      if (isError) return <p>Error loading movie details.</p>
 
     return (
