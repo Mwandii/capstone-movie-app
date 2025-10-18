@@ -21,6 +21,7 @@ function Hero({ data, isLoading, isError }) {
 
   return (
     <div
+    key={current.id}
         className="h-[400px] bg-cover bg-center relative m-5 rounded-2xl shadow-lg"
         style={{
     backgroundImage: `url(https://image.tmdb.org/t/p/w1280${current.backdrop_path})`
