@@ -4,7 +4,9 @@ function Footer() {
       <p className="text-sm">
         © {new Date().getFullYear()} OneMoreEpisode. All rights reserved.
       </p>
-      <p className="italic ">Because there is always time for one more episode!</p>
+      <p className="italic ">
+        Because there is always time for one more episode!
+      </p>
     </footer>
   );
 }

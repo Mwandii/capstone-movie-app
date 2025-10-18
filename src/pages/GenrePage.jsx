@@ -7,32 +7,47 @@ import Loading from "../components/Loading";
 import ErrorDisplay from "../components/ErrorDisplay";
 
 function GenrePage() {
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ["genrePage"],
+    queryFn: fetchMovieGenres,
+  });
 
-    const { data, isLoading, isError, error } = useQuery({
-        queryKey: ['genrePage'],
-        queryFn: fetchMovieGenres
-    })
-
-    if (isLoading) return <p><Loading/></p>
-    if (isError) return <p><ErrorDisplay/></p>
-
+  if (isLoading)
     return (
-        <div className="flex flex-col min-h-screen">
-        <Navbar/>
-<div className="flex-grow">
-            <h1 className="font-semibold text-3xl m-2">Genres</h1>
+      <p>
+        <Loading />
+      </p>
+    );
+  if (isError)
+    return (
+      <p>
+        <ErrorDisplay />
+      </p>
+    );
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <div className="flex-grow">
+        <h1 className="font-semibold text-3xl m-2">Genres</h1>
         <div className="opacity-0 animate-fadeIn grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 p-6">
-            
-        {data.genres.map((genres) => (
-            <Link to={`/genrespage/${genres.id}`}><div key={genres.id} className="bg-gray-300 text-gray-800 rounded-xl p-6  shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg  hover:shadow-gray-500 hover:cursor-pointer flex items-center justify-center text-center">
-                <h1 className="font-semibold text-xl break-words whitespace-normal leading-tight">{genres.name}</h1>
-            </div> </Link>
-        ))}
+          {data.genres.map((genres) => (
+            <Link to={`/genrespage/${genres.id}`}>
+              <div
+                key={genres.id}
+                className="bg-gray-300 text-gray-800 rounded-xl p-6  shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg  hover:shadow-gray-500 hover:cursor-pointer flex items-center justify-center text-center"
+              >
+                <h1 className="font-semibold text-xl break-words whitespace-normal leading-tight">
+                  {genres.name}
+                </h1>
+              </div>{" "}
+            </Link>
+          ))}
         </div>
-        </div>
-        <Footer/>
-        </div>
-    )
+      </div>
+      <Footer />
+    </div>
+  );
 }
 
 export default GenrePage;
