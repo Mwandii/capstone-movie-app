@@ -9,7 +9,7 @@ function Navbar() {
             </div>
             <div className="flex flex-wrap gap-2 items-center">
                 <SearchBar/>
-               <Link to={'/genrespage'}><button className="px-3 py-1 bg-black text-white rounded-md"> Categories</button></Link>
+               <Link to={'/genrespage'}><button className="px-3 py-1 bg-black text-white rounded-md hover:bg-gray-700 hover:cursor-pointer"> Categories</button></Link>
             </div>
         </nav>
     )

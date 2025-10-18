@@ -27,7 +27,7 @@ function SearchResults() {
         <div className="opacity-0 animate-fadeIn grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 p-6">
           {data.results.map((items) => (
             <div className="bg-white shadow-md rounded-lg flex flex-col h-full" >
-              <img className="w-full h-48 object-cover" src={`https://image.tmdb.org/t/p/w500${items.poster_path}`}/>
+              <img className="w-full h-48 object-cover" src={`https://image.tmdb.org/t/p/w500${items.poster_path}` }/>
               <div className="p-4 flex flex-col justify-between flex-grow">
                 <h4 className="text-lg font-bold">{items.title}</h4>
                 <div className="flex flex-wrap text-gray-500 font-light text-sm">
