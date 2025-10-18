@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import { fetchMovieGenres } from "../Services/api";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
+import ErrorDisplay from "../components/ErrorDisplay";
 
 function GenrePage() {
 
@@ -13,7 +14,7 @@ function GenrePage() {
     })
 
     if (isLoading) return <p><Loading/></p>
-    if (isError) return <p>Error: {error.message}</p>
+    if (isError) return <p><ErrorDisplay/></p>
 
     return (
         <div className="flex flex-col min-h-screen">

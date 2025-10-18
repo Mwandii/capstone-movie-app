@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { fetchMovieDetails } from "../Services/api";
 import Loading from "../components/Loading";
+import ErrorDisplay from "../components/ErrorDisplay";
 
 function MovieDetails() {
 
@@ -16,7 +17,7 @@ function MovieDetails() {
     })
 
      if (isLoading) return <p><Loading/></p>;
-     if (isError) return <p>Error loading movie details.</p>
+     if (isError) return <p><ErrorDisplay/></p>
 
     return (
         <>

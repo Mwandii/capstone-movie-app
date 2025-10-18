@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { popularTvshows } from "../Services/api";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
+import ErrorDisplay from "../components/ErrorDisplay";
 
 function PopularTvshows() {
 
@@ -11,7 +12,7 @@ function PopularTvshows() {
     })
 
     if (isLoading) return <p><Loading/></p>
-    if (isError) return <p>Error: {error.message}</p>
+    if (isError) return <p><ErrorDisplay/></p>
 
     return (
         <div>

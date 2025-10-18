@@ -4,6 +4,7 @@ import { fetchGenreDetails } from "../Services/api";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
+import ErrorDisplay from "../components/ErrorDisplay";
 
 function GenreDetails() {
 
@@ -15,7 +16,7 @@ function GenreDetails() {
     })
 
     if (isLoading) return <p><Loading/></p>
-    if (isError) return <p>Error: {error.message}</p>
+    if (isError) return <p><ErrorDisplay/></p>
 
     return (
          <div className="bg-stone-200">

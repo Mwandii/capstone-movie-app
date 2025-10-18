@@ -2,11 +2,12 @@ import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
+import ErrorDisplay from "./ErrorDisplay";
 
 function Hero({ data, isLoading, isError }) {
 
   if (isLoading) return <p><Loading/></p>
-  if (isError) return <p>Could not fetch trending movies</p>
+  if (isError) return <p><ErrorDisplay/></p>
 
   const movies = data?.results?.slice(0, 6) || [];
   const [index, setIndex] = useState(0)
