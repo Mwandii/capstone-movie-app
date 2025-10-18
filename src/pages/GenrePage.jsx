@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { fetchMovieGenres } from "../Services/api";
 import { Link } from "react-router-dom";
+import Loading from "../components/Loading";
 
 function GenrePage() {
 
@@ -11,7 +12,7 @@ function GenrePage() {
         queryFn: fetchMovieGenres
     })
 
-    if (isLoading) return <p>Loading...</p>
+    if (isLoading) return <p><Loading/></p>
     if (isError) return <p>Error: {error.message}</p>
 
     return (

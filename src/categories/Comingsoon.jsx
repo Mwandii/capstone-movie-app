@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { comingSoon } from "../Services/api";
 import { Link } from "react-router-dom";
+import Loading from "../components/Loading";
 
 function ComingSoon() {
 
@@ -9,7 +10,7 @@ function ComingSoon() {
         queryFn: comingSoon
     })
 
-    if (isLoading) return <p>Loading..</p>
+    if (isLoading) return <p><Loading/></p>
     if (isError) return <p>Error: {error.message}</p>
 
     return (

@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { fetchGenreDetails } from "../Services/api";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Loading from "../components/Loading";
 
 function GenreDetails() {
 
@@ -13,7 +14,7 @@ function GenreDetails() {
         queryFn: fetchGenreDetails
     })
 
-    if (isLoading) return <p>Loading...</p>
+    if (isLoading) return <p><Loading/></p>
     if (isError) return <p>Error: {error.message}</p>
 
     return (

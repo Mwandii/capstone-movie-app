@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { trendingMovies } from "../Services/api";
 import { Link } from "react-router-dom";
+import Loading from "../components/Loading";
 
 function TrendingMovies() {
 
@@ -9,7 +10,7 @@ function TrendingMovies() {
         queryFn: trendingMovies
     })
 
-    if(isLoading) return <p>Loading...</p>
+    if(isLoading) return <p><Loading/></p>
     if (isError) return <p>Error: {error.message}</p>
 
     return (
