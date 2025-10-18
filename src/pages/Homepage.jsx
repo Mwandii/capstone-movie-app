@@ -19,9 +19,11 @@ function Homepage() {
     return (
         <div className="bg-stone-200">
         <Navbar/>
+        <div className="opacity-0 animate-fadeIn">
         <Hero data={data} isLoading={isLoading} isError={isError} />
         <Movielist/>
         <Footer/> 
+        </div>
         </div>
     )
 }
