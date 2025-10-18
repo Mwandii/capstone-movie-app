@@ -111,7 +111,7 @@ http://localhost:5173
 ## 💡 Credits
 
 * Data sourced from [The Movie Database (TMDB)](https://www.themoviedb.org/)
-* Built with ❤️ by Athanas Muinde
+* Built by Athanas Muinde
 
 ---
 
