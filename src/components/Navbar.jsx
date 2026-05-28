@@ -3,20 +3,26 @@ import SearchBar from "./SearchBar";
 
 function Navbar() {
   return (
-    <nav className="flex flex-wrap justify-between bg-white shadow-md p-5 items-center">
-      <div className="mb-2 sm:mb-0">
-        <Link to={"/"}>
-          <h1 className="font-bold text-2xl hover:scale-110">OneMoreEpisode</h1>
+    <nav className="sticky top-0 z-50 bg-white shadow-md">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+        
+        <Link
+          to="/"
+          className="text-2xl font-bold transition-transform duration-300 hover:scale-105 w-fit"
+        >
+          OneMoreEpisode
         </Link>
-      </div>
-      <div className="flex flex-wrap gap-2 items-center">
-        <SearchBar />
-        <Link to={"/genrespage"}>
-          <button className="px-3 py-1 bg-black text-white rounded-md hover:bg-gray-700 hover:cursor-pointer">
-            {" "}
+
+        <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
+          <SearchBar />
+
+          <Link
+            to="/genrespage"
+            className="rounded-md bg-black px-4 py-2 text-center text-white transition-colors duration-300 hover:bg-gray-700"
+          >
             Categories
-          </button>
-        </Link>
+          </Link>
+        </div>
       </div>
     </nav>
   );

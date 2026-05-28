@@ -35,7 +35,7 @@ function MovieDetails() {
         <div
           className="relative h-[400px] bg-cover bg-center"
           style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+            backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
                  url(https://image.tmdb.org/t/p/w1280${data.backdrop_path})`,
           }}
         >

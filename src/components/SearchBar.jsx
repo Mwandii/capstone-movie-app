@@ -9,24 +9,35 @@ function SearchBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!search.trim()) return;
+    const trimmedSearch = search.trim();
 
-    navigate(`/search?query=${encodeURIComponent(search)}`);
+    if (!trimmedSearch) return;
+
+    navigate(`/search?query=${encodeURIComponent(trimmedSearch)}`);
 
     setSearch("");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center">
+    <form
+      onSubmit={handleSubmit}
+      className="flex w-full items-center gap-2 sm:w-auto"
+    >
       <input
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="border rounded-full p-2 m-2 border-transparent bg-gray-400 shadow-md text-white font-light outline-none focus:outline-none"
-        placeholder="Search..."
+        placeholder="Search movies..."
+        aria-label="Search movies"
+        className="w-full rounded-full border border-gray-300 bg-gray-100 px-4 py-2 text-sm text-black shadow-sm outline-none transition-all duration-300 placeholder:text-gray-500 focus:border-black focus:ring-2 focus:ring-gray-300 sm:w-64"
       />
-      <button type="submit" className="hover:cursor-pointer hover:scale-115">
-        <FaSearch className="text-2xl m-2 text-gray-600" />
+
+      <button
+        type="submit"
+        aria-label="Search"
+        className="rounded-full p-2 transition-transform duration-300 hover:scale-110 hover:cursor-pointer"
+      >
+        <FaSearch className="text-xl text-gray-700" />
       </button>
     </form>
   );
